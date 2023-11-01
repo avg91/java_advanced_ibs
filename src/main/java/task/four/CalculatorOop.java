@@ -24,7 +24,7 @@ public class CalculatorOop {
     }
 
     public double divide() {
-        return firstNumber / firstNumber;
+        return firstNumber / secondNumber;
     }
 
     public static void main(String[] args) {
