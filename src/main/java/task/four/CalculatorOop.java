@@ -1,63 +1,35 @@
 package task.four;
 
-import java.util.Scanner;
-
 public class CalculatorOop {
     private double firstNumber;
     private double secondNumber;
+    private String operation;
 
-    public CalculatorOop(double firstNumber, double secondNumber) {
+    public CalculatorOop() {
+    }
+
+    public void setNumbers(double firstNumber, double secondNumber) {
         this.firstNumber = firstNumber;
         this.secondNumber = secondNumber;
     }
 
-    public double add() {
-        return firstNumber + secondNumber;
+    public void setOperation(String operation) {
+        this.operation = operation;
     }
 
-    public double subtract() {
-        return firstNumber - secondNumber;
-    }
-
-    public double multiply() {
-        return firstNumber * secondNumber;
-    }
-
-    public double divide() {
-        return firstNumber / secondNumber;
-    }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите первое число: ");
-        double firstNumber = scanner.nextDouble();
-        System.out.print("Введите операцию (+, -, *, /): ");
-        String operation = scanner.next();
-        System.out.print("Введите второе число: ");
-        double secondNumber = scanner.nextDouble();
-
-        CalculatorOop calculator = new CalculatorOop(firstNumber, secondNumber);
-
-        double result;
-
+    public double calculate() {
         switch (operation) {
             case "+":
-                result = calculator.add();
-                break;
+                return firstNumber + secondNumber;
             case "-":
-                result = calculator.subtract();
-                break;
+                return firstNumber - secondNumber;
             case "*":
-                result = calculator.multiply();
-                break;
+                return firstNumber * secondNumber;
             case "/":
-                    result = calculator.divide();
-                break;
+                return firstNumber / secondNumber;
             default:
-                System.out.println("Выбрана некорректная операция");
-                return;
+                System.out.println("Некорректная операция");
+                return 0;
         }
-
-        System.out.println("Результат: " + result);
     }
 }
